@@ -4,4 +4,14 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ApiDDD.Data\ApiDDD.Data.csproj" />
+    <ProjectReference Include="..\ApiDDD.Domain\ApiDDD.Domain.csproj" />
+    <ProjectReference Include="..\ApiDDD.Service\ApiDDD.Service.csproj" />
+  </ItemGroup>
+
 </Project>
