@@ -1,4 +1,4 @@
-﻿using ApiDDD.Data.Entities;
+﻿using ApiDDD.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

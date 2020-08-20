@@ -1,5 +1,5 @@
-﻿using ApiDDD.Data.Entities;
-using ApiDDD.Data.Mapping;
+﻿using ApiDDD.Data.Mapping;
+using ApiDDD.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApiDDD.Data.Context

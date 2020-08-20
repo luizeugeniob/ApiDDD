@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace ApiDDD.Data.Entities
+namespace ApiDDD.Domain.Entities
 {
     public abstract class BaseEntity
     {

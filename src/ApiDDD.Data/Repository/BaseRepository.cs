@@ -1,5 +1,5 @@
 ﻿using ApiDDD.Data.Context;
-using ApiDDD.Data.Entities;
+using ApiDDD.Domain.Entities;
 using ApiDDD.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;

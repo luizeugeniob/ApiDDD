@@ -1,4 +1,4 @@
-﻿namespace ApiDDD.Data.Entities
+﻿namespace ApiDDD.Domain.Entities
 {
     public class UserEntity : BaseEntity
     {

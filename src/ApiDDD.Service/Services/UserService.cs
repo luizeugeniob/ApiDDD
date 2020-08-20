@@ -1,4 +1,4 @@
-﻿using ApiDDD.Data.Entities;
+﻿using ApiDDD.Domain.Entities;
 using ApiDDD.Domain.Interfaces;
 using ApiDDD.Domain.Interfaces.Services.User;
 using System;

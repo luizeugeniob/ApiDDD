@@ -1,4 +1,4 @@
-﻿using ApiDDD.Data.Entities;
+﻿using ApiDDD.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
