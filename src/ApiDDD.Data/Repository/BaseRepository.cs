@@ -44,7 +44,7 @@ namespace ApiDDD.Data.Repository
                 if (item.Id == Guid.Empty)
                     item.Id = Guid.NewGuid();
 
-                item.CreatedAt = DateTimeOffset.Now;
+                item.CreatedAt = DateTime.Now;
                 _dataSet.Add(item);
 
                 await _context.SaveChangesAsync();
@@ -94,7 +94,7 @@ namespace ApiDDD.Data.Repository
                 if (result == null)
                     return null;
 
-                item.updatedAt = DateTimeOffset.Now;
+                item.updatedAt = DateTime.Now;
                 item.CreatedAt = result.CreatedAt;
 
                 _context.Entry(result).CurrentValues.SetValues(item);

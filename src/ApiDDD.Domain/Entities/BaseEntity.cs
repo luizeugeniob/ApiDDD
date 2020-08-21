@@ -8,14 +8,14 @@ namespace ApiDDD.Domain.Entities
         [Key]
         public Guid Id { get; set; }
 
-        private DateTimeOffset? _createdAt;
-        public DateTimeOffset? CreatedAt
+        private DateTime? _createdAt;
+        public DateTime? CreatedAt
         {
             get { return _createdAt; }
-            set { _createdAt = (value == null ? DateTimeOffset.Now : value); }
+            set { _createdAt = (value == null ? DateTime.Now : value); }
         }
 
-        public DateTimeOffset? updatedAt { get; set; }
+        public DateTime? updatedAt { get; set; }
 
     }
 }
