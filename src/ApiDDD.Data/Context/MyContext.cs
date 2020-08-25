@@ -1,6 +1,7 @@
 ﻿using ApiDDD.Data.Mapping;
 using ApiDDD.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace ApiDDD.Data.Context
 {
@@ -15,6 +16,16 @@ namespace ApiDDD.Data.Context
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<UserEntity>(new UserMap().Configure);
+
+            modelBuilder.Entity<UserEntity>().HasData(
+                new UserEntity
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Admin",
+                    Email = "admin@mail.com",
+                    CreatedAt = DateTime.Now,
+                    updatedAt = null
+                });
         }
     }
 }

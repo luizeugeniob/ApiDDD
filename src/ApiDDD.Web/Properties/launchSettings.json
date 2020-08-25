@@ -14,7 +14,10 @@
       "launchBrowser": true,
       "launchUrl": "index.html",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DB_CONNECTION": "Server=localhost;Initial Catalog=dbAPI;MultipleActiveResultSets=true;User ID=sa;Password=15974",
+        "DATABASE": "SQLSERVER",
+        "MIGRATION": "APLICAR"
       }
     },
     "SampleApiDDD.Web": {
