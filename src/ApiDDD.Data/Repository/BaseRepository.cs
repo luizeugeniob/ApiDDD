@@ -94,7 +94,7 @@ namespace ApiDDD.Data.Repository
                 if (result == null)
                     return null;
 
-                item.updatedAt = DateTime.Now;
+                item.UpdatedAt = DateTime.Now;
                 item.CreatedAt = result.CreatedAt;
 
                 _context.Entry(result).CurrentValues.SetValues(item);

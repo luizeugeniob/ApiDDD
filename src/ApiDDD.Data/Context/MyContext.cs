@@ -24,7 +24,7 @@ namespace ApiDDD.Data.Context
                     Name = "Admin",
                     Email = "admin@mail.com",
                     CreatedAt = DateTime.Now,
-                    updatedAt = null
+                    UpdatedAt = null
                 });
         }
     }

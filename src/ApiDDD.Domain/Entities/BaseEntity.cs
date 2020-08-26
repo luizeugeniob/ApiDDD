@@ -15,7 +15,7 @@ namespace ApiDDD.Domain.Entities
             set { _createdAt = (value == null ? DateTime.Now : value); }
         }
 
-        public DateTime? updatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
     }
 }
