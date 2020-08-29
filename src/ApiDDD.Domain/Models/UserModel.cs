@@ -25,18 +25,18 @@ namespace ApiDDD.Domain.Models
             set { _email = value; }
         }
 
-        private DateTime _createAt;
-        public DateTime CreateAt
+        private DateTime _createdAt;
+        public DateTime CreatedAt
         {
-            get { return _createAt; }
-            set { _createAt = value == null ? DateTime.Now : value; }
+            get { return _createdAt; }
+            set { _createdAt = value == null ? DateTime.Now : value; }
         }
 
-        private DateTime _updateAt;
-        public DateTime UpdateAt
+        private DateTime _updatedAt;
+        public DateTime UpdatedAt
         {
-            get { return _updateAt; }
-            set { _updateAt = value; }
+            get { return _updatedAt; }
+            set { _updatedAt = value; }
         }
     }
 }
