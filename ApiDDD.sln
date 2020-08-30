@@ -13,13 +13,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiDDD.Domain", "src\ApiDDD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiDDD.Service", "src\ApiDDD.Service\ApiDDD.Service.csproj", "{587BC8A3-3A88-456A-AFB5-19B8B8E0BFBE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiDDD.Web", "src\ApiDDD.Web\ApiDDD.Web.csproj", "{7D75FEED-330E-48FB-BD28-0C9DC52BD40E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiDDD.Application", "src\ApiDDD.Web\ApiDDD.Application.csproj", "{7D75FEED-330E-48FB-BD28-0C9DC52BD40E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{3F0A1D46-5BB6-4B1C-974C-950A34730D96}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiDDD.Data.Test", "test\ApiDDD.Data.Test\ApiDDD.Data.Test.csproj", "{B3A3A2B6-9E15-482D-BF0D-55D08B38746A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiDDD.Service.Test", "test\ApiDDD.Service.Test\ApiDDD.Service.Test.csproj", "{40377441-1C18-4095-9681-B8F657CF4E5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiDDD.Service.Test", "test\ApiDDD.Service.Test\ApiDDD.Service.Test.csproj", "{40377441-1C18-4095-9681-B8F657CF4E5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiDDD.Application.Test", "ApiDDD.Application.Test\ApiDDD.Application.Test.csproj", "{D1A03DA4-5760-48B5-B180-1F85E537C338}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{40377441-1C18-4095-9681-B8F657CF4E5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40377441-1C18-4095-9681-B8F657CF4E5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40377441-1C18-4095-9681-B8F657CF4E5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1A03DA4-5760-48B5-B180-1F85E537C338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1A03DA4-5760-48B5-B180-1F85E537C338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1A03DA4-5760-48B5-B180-1F85E537C338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1A03DA4-5760-48B5-B180-1F85E537C338}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{7D75FEED-330E-48FB-BD28-0C9DC52BD40E} = {53FC340D-616F-4DC9-81B3-39D6934B36B2}
 		{B3A3A2B6-9E15-482D-BF0D-55D08B38746A} = {3F0A1D46-5BB6-4B1C-974C-950A34730D96}
 		{40377441-1C18-4095-9681-B8F657CF4E5E} = {3F0A1D46-5BB6-4B1C-974C-950A34730D96}
+		{D1A03DA4-5760-48B5-B180-1F85E537C338} = {3F0A1D46-5BB6-4B1C-974C-950A34730D96}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F706198C-85D0-42E4-82CB-B93BEA3238AA}
