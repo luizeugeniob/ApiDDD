@@ -17,17 +17,14 @@ namespace ApiDDD.Service.Services
     {
         private IUserRepository _repository;
         private SigningConfigurations _signingConfigurations;
-        private TokenConfigurations _tokenConfiguration;
         private IConfiguration _configuration;
 
         public LoginService(IUserRepository repository,
                             SigningConfigurations signingConfigurations,
-                            TokenConfigurations tokenConfiguration,
                             IConfiguration configuration)
         {
             _repository = repository;
             _signingConfigurations = signingConfigurations;
-            _tokenConfiguration = tokenConfiguration;
             _configuration = configuration;
         }
 
@@ -57,7 +54,7 @@ namespace ApiDDD.Service.Services
                         });
 
                     DateTime createDate = DateTime.Now;
-                    DateTime expirationDate = createDate + TimeSpan.FromSeconds(_tokenConfiguration.Seconds);
+                    DateTime expirationDate = createDate + TimeSpan.FromSeconds(Convert.ToInt32(Environment.GetEnvironmentVariable("Seconds")));
 
                     var handler = new JwtSecurityTokenHandler();
                     string token = CreateToken(identity, createDate, expirationDate, handler);
@@ -73,15 +70,15 @@ namespace ApiDDD.Service.Services
                     message = "Falha ao autenticar"
                 };
             }
-                
+
         }
 
         private string CreateToken(ClaimsIdentity identity, DateTime createDate, DateTime expirationDate, JwtSecurityTokenHandler handler)
         {
             var securityToken = handler.CreateToken(new SecurityTokenDescriptor
             {
-                Issuer = _tokenConfiguration.Issuer,
-                Audience = _tokenConfiguration.Audience,
+                Issuer = Environment.GetEnvironmentVariable("Issuer"),
+                Audience = Environment.GetEnvironmentVariable("Audience"),
                 SigningCredentials = _signingConfigurations.SigningCredentials,
                 Subject = identity,
                 NotBefore = createDate,

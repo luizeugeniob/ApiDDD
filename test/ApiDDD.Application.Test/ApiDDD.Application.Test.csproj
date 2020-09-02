@@ -16,9 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\ApiDDD.Domain\ApiDDD.Domain.csproj" />
-    <ProjectReference Include="..\src\ApiDDD.Service\ApiDDD.Service.csproj" />
-    <ProjectReference Include="..\src\ApiDDD.Web\ApiDDD.Application.csproj" />
+    <ProjectReference Include="..\..\src\ApiDDD.Domain\ApiDDD.Domain.csproj" />
+    <ProjectReference Include="..\..\src\ApiDDD.Service\ApiDDD.Service.csproj" />
+    <ProjectReference Include="..\..\src\ApiDDD.Web\ApiDDD.Application.csproj" />
   </ItemGroup>
 
 </Project>

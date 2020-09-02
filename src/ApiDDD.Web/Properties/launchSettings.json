@@ -17,7 +17,10 @@
         "ASPNETCORE_ENVIRONMENT": "Development",
         "DB_CONNECTION": "Server=localhost;Initial Catalog=dbAPI;MultipleActiveResultSets=true;User ID=sa;Password=15974",
         "DATABASE": "SQLSERVER",
-        "MIGRATION": "APLICAR"
+        "MIGRATION": "APLICAR",
+        "Audience": "ExemploAudience",
+        "Issuer": "ExemploIssue",
+        "Seconds": "28800"
       }
     },
     "SampleApiDDD.Web": {

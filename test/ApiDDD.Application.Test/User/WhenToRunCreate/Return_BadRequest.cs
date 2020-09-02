@@ -1,6 +1,6 @@
 ﻿using ApiDDD.Domain.Dtos.User;
 using ApiDDD.Domain.Interfaces.Services.User;
-using ApiDDD.Web.Controllers;
+using ApiDDD.Application.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using System;
@@ -9,7 +9,7 @@ using Xunit;
 
 namespace ApiDDD.Application.Test.User.WhenToRunCreate
 {
-    public class Return_Created
+    public class Return_BadRequest
     {
         private UsersController _controller;
 
@@ -30,6 +30,8 @@ namespace ApiDDD.Application.Test.User.WhenToRunCreate
                 });
 
             _controller = new UsersController(serviceMock.Object);
+            _controller.ModelState.AddModelError("Name", "Nome é obrigatório.");
+
             Mock<IUrlHelper> url = new Mock<IUrlHelper>();
             url.Setup(s => s.Link(It.IsAny<string>(), It.IsAny<object>())).Returns("http://localhost:5000");
             _controller.Url = url.Object;
@@ -41,12 +43,7 @@ namespace ApiDDD.Application.Test.User.WhenToRunCreate
             };
 
             var result = await _controller.Post(userDtoCreate);
-            Assert.True(result is CreatedResult);
-
-            var resultValue = ((CreatedResult)result).Value as UserDtoCreateResult;
-            Assert.NotNull(resultValue);
-            Assert.Equal(userDtoCreate.Name, resultValue.Name);
-            Assert.Equal(userDtoCreate.Email, resultValue.Email);
+            Assert.True(result is BadRequestObjectResult);
         }
     }
 }

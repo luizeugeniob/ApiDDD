@@ -1,6 +1,6 @@
 ﻿using ApiDDD.Domain.Dtos.User;
 using ApiDDD.Domain.Interfaces.Services.User;
-using ApiDDD.Web.Controllers;
+using ApiDDD.Application.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using System;

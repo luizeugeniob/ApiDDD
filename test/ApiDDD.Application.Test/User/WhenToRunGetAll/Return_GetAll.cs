@@ -1,16 +1,17 @@
 ﻿using ApiDDD.Domain.Dtos.User;
 using ApiDDD.Domain.Interfaces.Services.User;
-using ApiDDD.Web.Controllers;
+using ApiDDD.Application.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
 namespace ApiDDD.Application.Test.User.WhenToRunGetAll
 {
-    public class Return_BadRequest
+    public class Return_GetAll
     {
         private UsersController _controller;
 
@@ -39,10 +40,12 @@ namespace ApiDDD.Application.Test.User.WhenToRunGetAll
                 });
 
             _controller = new UsersController(serviceMock.Object);
-            _controller.ModelState.AddModelError("Id", "FormatoInvalido");
 
             var result = await _controller.GetAll();
-            Assert.True(result is BadRequestObjectResult);
+            Assert.True(result is OkObjectResult);
+
+            var resultValue = ((OkObjectResult)result).Value as IEnumerable<UserDto>;
+            Assert.True(resultValue.Count() == 2);
         }
     }
 }

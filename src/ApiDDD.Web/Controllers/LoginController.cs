@@ -6,7 +6,7 @@ using System;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace ApiDDD.Web.Controllers
+namespace ApiDDD.Application.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

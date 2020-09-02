@@ -7,7 +7,7 @@ using System;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace ApiDDD.Web.Controllers
+namespace ApiDDD.Application.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -47,7 +47,12 @@ namespace ApiDDD.Web.Controllers
 
             try
             {
-                return Ok(await _service.Get(id));
+                var result = await _service.Get(id);
+
+                if (result == null)
+                    return NotFound();
+                else
+                    return Ok(result);
             }
             catch (ArgumentException e)
             {

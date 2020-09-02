@@ -28,8 +28,8 @@ namespace ApiDDD.Service.Test.User
 
             var userUpdated = await _service.Put(userDtoUpdate);
             Assert.NotNull(userUpdated);
-            Assert.Equal(UserNameUpdated, userUpdated.Name);
-            Assert.Equal(UserEmailUpdated, userUpdated.Email);
+            Assert.Equal(userDtoUpdate.Name, userUpdated.Name);
+            Assert.Equal(userDtoUpdate.Email, userUpdated.Email);
         }
     }
 }
