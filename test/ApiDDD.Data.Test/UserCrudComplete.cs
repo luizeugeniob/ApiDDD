@@ -31,42 +31,42 @@ namespace ApiDDD.Data.Test
                     Name = Faker.Name.FullName()
                 };
 
-                var userCreated = await repository.InsertAsync(entity);
-                Assert.NotNull(userCreated);
-                Assert.Equal(entity.Email, userCreated.Email);
-                Assert.Equal(entity.Name, userCreated.Name);
-                Assert.NotNull(userCreated.CreatedAt);
-                Assert.Null(userCreated.UpdatedAt);
-                Assert.False(userCreated.Id == Guid.Empty);
+                var entityCreated = await repository.InsertAsync(entity);
+                Assert.NotNull(entityCreated);
+                Assert.Equal(entity.Email, entityCreated.Email);
+                Assert.Equal(entity.Name, entityCreated.Name);
+                Assert.NotNull(entityCreated.CreatedAt);
+                Assert.Null(entityCreated.UpdatedAt);
+                Assert.False(entityCreated.Id == Guid.Empty);
 
                 entity.Name = Faker.Name.First();
-                var userUpdated = await repository.UpdateAsync(entity);
-                Assert.NotNull(userUpdated);
-                Assert.Equal(entity.Email, userUpdated.Email);
-                Assert.Equal(entity.Name, userUpdated.Name);
-                Assert.NotNull(userCreated.CreatedAt);
-                Assert.NotNull(userCreated.UpdatedAt);
-                Assert.False(userCreated.Id == Guid.Empty);
+                var entityUpdated = await repository.UpdateAsync(entity);
+                Assert.NotNull(entityUpdated);
+                Assert.Equal(entity.Email, entityUpdated.Email);
+                Assert.Equal(entity.Name, entityUpdated.Name);
+                Assert.NotNull(entityUpdated.CreatedAt);
+                Assert.NotNull(entityUpdated.UpdatedAt);
+                Assert.False(entityUpdated.Id == Guid.Empty);
 
-                var userExists = await repository.ExistsAsync(entity.Id);
-                Assert.True(userExists);
+                var entityExists = await repository.ExistsAsync(entity.Id);
+                Assert.True(entityExists);
 
-                var getUser = await repository.SelectAsync(entity.Id);
-                Assert.NotNull(getUser);
-                Assert.Equal(getUser.Email, userUpdated.Email);
-                Assert.Equal(getUser.Name, userUpdated.Name);
+                var getEntity = await repository.SelectAsync(entity.Id);
+                Assert.NotNull(getEntity);
+                Assert.Equal(getEntity.Email, entityUpdated.Email);
+                Assert.Equal(getEntity.Name, entityUpdated.Name);
 
-                var getAllUsers = await repository.SelectAsync();
-                Assert.NotNull(getAllUsers);
-                Assert.True(getAllUsers.Count() > 0);
+                var getAllEntities = await repository.SelectAsync();
+                Assert.NotNull(getAllEntities);
+                Assert.True(getAllEntities.Count() > 0);
 
-                var isDeleted = await repository.DeleteAsync(getUser.Id);
+                var isDeleted = await repository.DeleteAsync(getEntity.Id);
                 Assert.True(isDeleted);
 
-                var defaultUser = await repository.FindByLogin("admin@mail.com");
-                Assert.NotNull(defaultUser);
-                Assert.Equal("admin@mail.com", defaultUser.Email);
-                Assert.Equal("Admin", defaultUser.Name);
+                var defaultEntity = await repository.FindByLogin("admin@mail.com");
+                Assert.NotNull(defaultEntity);
+                Assert.Equal("admin@mail.com", defaultEntity.Email);
+                Assert.Equal("Admin", defaultEntity.Name);
             }
         }
     }

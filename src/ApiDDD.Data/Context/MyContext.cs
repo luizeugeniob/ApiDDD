@@ -1,4 +1,5 @@
 ﻿using ApiDDD.Data.Mapping;
+using ApiDDD.Data.Seeds;
 using ApiDDD.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -26,6 +27,12 @@ namespace ApiDDD.Data.Context
                     CreatedAt = DateTime.Now,
                     UpdatedAt = null
                 });
+
+            modelBuilder.Entity<StateEntity>(new StateMap().Configure);
+            modelBuilder.Entity<CityEntity>(new CityMap().Configure);
+            modelBuilder.Entity<AddressEntity>(new AddressMap().Configure);
+
+            StateSeeds.States(modelBuilder);
         }
     }
 }

@@ -11,13 +11,15 @@ namespace ApiDDD.Data.Context
         /// </summary>
         public MyContext CreateDbContext(string[] args)
         {
-            var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION");
+            //var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION");
             var optionsBuilder = new DbContextOptionsBuilder<MyContext>();
 
-            if (Environment.GetEnvironmentVariable("DATABASE").ToLower() == "sqlserver")
-                optionsBuilder.UseSqlServer(connectionString);
-            else
-                optionsBuilder.UseMySql(connectionString);
+            //if (Environment.GetEnvironmentVariable("DATABASE").ToLower() == "sqlserver")
+            //    optionsBuilder.UseSqlServer(connectionString);
+            //else
+            //    optionsBuilder.UseMySql(connectionString);
+
+            optionsBuilder.UseSqlServer("Server=localhost;Initial Catalog=dbAPI;MultipleActiveResultSets=true;User ID=sa;Password=15974");
 
             return new MyContext(optionsBuilder.Options);
         }
