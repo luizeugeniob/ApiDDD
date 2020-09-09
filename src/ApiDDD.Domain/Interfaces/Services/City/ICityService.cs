@@ -9,10 +9,10 @@ namespace ApiDDD.Domain.Interfaces.Services.City
     {
         Task<CityDto> Get(Guid id);
         Task<CityDtoComplete> GetCompleteById(Guid id);
-        Task<CityDtoComplete> GetCompleteByIBGECode(Guid id);
+        Task<CityDtoComplete> GetCompleteByIBGECode(int ibgeCode);
         Task<IEnumerable<CityDto>> GetAll();
-        Task<CityDtoCreateResult> Post(CityDtoCreate user);
-        Task<CityDtoUpdateResult> Put(CityDtoUpdate user);
+        Task<CityDtoCreateResult> Post(CityDtoCreate city);
+        Task<CityDtoUpdateResult> Put(CityDtoUpdate city);
         Task<bool> Delete(Guid id);
     }
 }

@@ -9,6 +9,9 @@ namespace ApiDDD.CrossCutting.Mappings
         public ModelToEntityProfile()
         {
             CreateMap<UserEntity, UserModel>().ReverseMap();
+            CreateMap<StateEntity, StateModel>().ReverseMap();
+            CreateMap<CityEntity, CityModel>().ReverseMap();
+            CreateMap<AddressEntity, AddressModel>().ReverseMap();
         }
     }
 }

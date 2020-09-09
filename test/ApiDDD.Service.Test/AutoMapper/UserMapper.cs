@@ -10,8 +10,8 @@ namespace ApiDDD.Service.Test.AutoMapper
 {
     public class UserMapper : BaseTest
     {
-        [Fact(DisplayName = "Should Be Able To Map The Models")]
-        public void Should_Be_Able_To_Map_The_Models()
+        [Fact(DisplayName = "Should Be Able To Map The User Models")]
+        public void Should_Be_Able_To_Map_The_User_Models()
         {
             var model = new UserModel()
             {

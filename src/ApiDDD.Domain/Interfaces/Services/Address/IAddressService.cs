@@ -8,8 +8,8 @@ namespace ApiDDD.Domain.Interfaces.Services.Address
     {
         Task<AddressDto> Get(Guid id);
         Task<AddressDto> Get(string zipCode);
-        Task<AddressDtoCreateResult> Post(AddressDtoCreate user);
-        Task<AddressDtoUpdateResult> Put(AddressDtoUpdate user);
+        Task<AddressDtoCreateResult> Post(AddressDtoCreate address);
+        Task<AddressDtoUpdateResult> Put(AddressDtoUpdate address);
         Task<bool> Delete(Guid id);
     }
 }
