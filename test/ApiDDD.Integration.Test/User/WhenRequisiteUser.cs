@@ -1,7 +1,5 @@
 ﻿using ApiDDD.Domain.Dtos.User;
 using Newtonsoft.Json;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -76,7 +74,6 @@ namespace ApiDDD.Integration.Test.User
             Assert.Equal(userDtoUpdateResult.Name, userDto.Name);
             Assert.Equal(userDtoUpdateResult.Email, userDto.Email);
 
-
             // Delete
             response = await Client.DeleteAsync($"{HostApi}/users/{userDto.Id}");
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
@@ -84,7 +81,6 @@ namespace ApiDDD.Integration.Test.User
             // Get after Delete
             response = await Client.GetAsync($"{HostApi}/users/{userDto.Id}");
             Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
-
         }
     }
 }
