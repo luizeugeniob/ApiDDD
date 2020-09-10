@@ -15,6 +15,9 @@ namespace ApiDDD.CrossCutting.DependencyInjection
         {
             services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
             services.AddScoped<IUserRepository, UserImplementation>();
+            services.AddScoped<IStateRepository, StateImplementation>();
+            services.AddScoped<ICityRepository, CityImplementation>();
+            services.AddScoped<IAddressRepository, AddressImplementation>();
 
             if (Environment.GetEnvironmentVariable("DATABASE").ToLower() == "sqlserver")
                 services.AddDbContext<MyContext>(options => options.UseSqlServer(Environment.GetEnvironmentVariable("DB_CONNECTION")));
